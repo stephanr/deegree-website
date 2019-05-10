@@ -1,0 +1,30 @@
+---
+layout: page-fullwidth
+title: TMC Meeting Minutes
+permalink: /community/tmc-meeting-minutes
+---
+
+{% assign items = site.tmc_meeting_minutes | sort: 'path' %}
+{% for meeting in items reversed %}
+    {% assign this_year = meeting.path | split: "/" | last | split: "-" | first %}
+    {% assign last_year = meeting.previous.path | split: "/" | last | split: "-" | first %}
+    {% assign next_year = meeting.next.path | split: "/" | last | split: "-" | first %}
+    
+    {% if forloop.first %}
+    <h3 id="{{ this_year }}-ref">{{this_year}}</h3>
+    <ul>
+    {% elsif this_year != next_year %}
+    </ul>
+    <h3 id="{{ this_year }}-ref">{{this_year}}</h3>
+    <ul>
+    {% endif %}
+
+    <li><a href="{{ meeting.url }}">{{ meeting.slug }}</a>
+    {% comment %}
+    {{ meeting.path }} - this: {{ this_year }} last: {{ last_year }} next: {{ next_year }}</li>
+    {% endcomment %}
+
+    {% if forloop.last %}
+    </ul>
+    {% endif %}
+{% endfor %}

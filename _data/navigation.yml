@@ -29,6 +29,8 @@
     url: "/community/guidelines"
   - title: "Blog Archive"
     url: "/blog/archive/"
+  - title: "TMC Meeting Minutes"
+    url: "/community/tmc-meeting-minutes"
 
 #- title: "Dropdown Menu"
 #  url: "#"

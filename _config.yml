@@ -85,6 +85,12 @@ compress_html:
   ignore:
     envs: [development]
 
+# data collections
+#
+collections:
+  tmc_meeting_minutes:
+    output: true
+    permalink: /community/tmc-meeting-minutes/:name
 
 #
 #       ____       ____            ____
@@ -114,8 +120,15 @@ defaults:
       sidebar: right       # Possible values › left, right › by default there will be no sidebar
       comments: false
       author: deegree-tmc  # Default author for posts
-
-
+  -
+    scope:
+      path: ""
+      type: "tmc_meeting_minutes"
+    values:
+      layout: page-fullwidth
+      show_meta: true      # Show metadata for all posts
+      comments: false
+      author: deegree-tmc  # Default author for posts
 
 #       _   __            _             __  _
 #      / | / /___ __   __(_)___ _____ _/ /_(_)___  ____
