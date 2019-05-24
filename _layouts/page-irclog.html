@@ -1,0 +1,48 @@
+---
+layout: default
+format: page-irclog
+---
+{% if page.image.title %}
+<div class="row t30">
+	<div class="small-12 columns">
+		<img src="{{ site.urlimg }}{{ page.image.title }}" width="970" alt="{{ page.title | escape_once }}">
+		{% if page.image.caption_url and page.image.caption %}
+		<p class="text-right caption">
+			<a href="{{ page.image.caption_url }}">{{ page.image.caption }}</a>
+		</p>
+		{% endif %}
+	</div><!-- /.small-12.columns -->
+</div><!-- /.row -->
+{% endif %}
+
+
+<div class="row t30">
+	<div class="medium-12 columns">
+		<article>
+			<header>
+				{% if page.subheadline %}<p class="subheadline">{{ page.subheadline }}</p>{% endif %}
+				<h1>{{ page.title }}</h1>
+			</header>
+
+			{% if page.teaser %}
+			<p class="teaser">
+				{{ page.teaser }}
+			</p>
+			{% endif %}
+
+			<h6>IRCLOG 2</h6>
+
+{% comment %}
+The following replacements are made:
+- encode html entities
+- replace newline into breaks
+- convert text-links into html links
+
+{% endcomment %}
+
+			{{ content | xml_escape | regex_replace: '(\r\n|\n)', '<br>' | regex_replace: '((http|ftp|https)://([\w_-]+(?:(?:\.[\w_-]+)+))([\w.,@?^=%&:/~+#-]*[\w@?^=%&/~+#-])?)', '<a href="\1">\1</a>'  }}
+		</article>
+	</div><!-- /.medium-12.columns -->
+</div><!-- /.row -->
+
+

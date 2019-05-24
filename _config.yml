@@ -126,6 +126,7 @@ defaults:
       type: "tmc_meeting_minutes"
     values:
       layout: page-fullwidth
+      #layout: page-irclog
       show_meta: true      # Show metadata for all posts
       comments: false
       author: deegree-tmc  # Default author for posts

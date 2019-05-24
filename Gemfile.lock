@@ -37,6 +37,7 @@ GEM
     jekyll-gist (1.5.0)
       octokit (~> 4.2)
     jekyll-paginate (1.1.0)
+    jekyll-regex-replace (1.1.0)
     jekyll-sass-converter (1.5.2)
       sass (~> 3.4)
     jekyll-watch (2.1.2)
@@ -79,6 +80,7 @@ DEPENDENCIES
   jekyll-asciidoc
   jekyll-gist
   jekyll-paginate
+  jekyll-regex-replace
 
 BUNDLED WITH
    2.0.1
